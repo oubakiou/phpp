@@ -1,0 +1,18 @@
+{
+  "name": "oubakiou/phpp",
+  "version": "0.0.1",
+  "license": "MIT",
+  "homepage": "https://github.com/oubakiou/phpp/",
+  "require": {
+    "php": "7.1.*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "5.7.*",
+    "friendsofphp/php-cs-fixer": "1.*"
+  },
+  "autoload": {
+    "classmap": [
+      "src/"
+    ]
+  }
+}
