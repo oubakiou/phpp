@@ -46,11 +46,11 @@ class Arr implements \IteratorAggregate
                         return ('is_'.$builtinValidatorName)($value);
                     };
                 };
-                $this->validator = $builtinValidatorNameToValidator($builtinValidatorName);
+                $this->validator = $builtinValidatorNameToValidator($builtinValidatorName)->bindTo(null);
             }
 
             if ($validator) {
-                $this->validator = $validator;
+                $this->validator = $validator->bindTo(null);
             }
 
             return $this->validate();
@@ -296,7 +296,7 @@ trait ScalaLikeCollectionMethods
 
     public function drop(int $n): self
     {
-        return new self(array_slice($this->toArray(), $n), '', $this->getValidator()->bindTo(null));
+        return new self(array_slice($this->toArray(), $n), '', $this->getValidator());
     }
 
     public function dropWhile(callable $p): self
@@ -314,7 +314,7 @@ trait ScalaLikeCollectionMethods
 
     public function take(int $n): self
     {
-        return new self(array_slice($this->toArray(), 0, $n), '', $this->getValidator()->bindTo(null));
+        return new self(array_slice($this->toArray(), 0, $n), '', $this->getValidator());
     }
 
     public function takeWhile(callable $p): self
@@ -374,7 +374,7 @@ trait ScalaLikeCollectionMethods
     {
         $length = $untile - $from;
 
-        return new self(array_slice($this->toArray(), $from, $length), '', $this->getValidator()->bindTo(null));
+        return new self(array_slice($this->toArray(), $from, $length), '', $this->getValidator());
     }
 
     public function partition(callable $p): self
@@ -600,12 +600,12 @@ trait ScalaLikeCollectionMethods
 
     public function distinct(): self
     {
-        return new self(array_unique($this->toArray()), '', $this->getValidator()->bindTo(null));
+        return new self(array_unique($this->toArray()), '', $this->getValidator());
     }
 
     public function reverse(): self
     {
-        return new self(array_reverse($this->toArray()), '', $this->getValidator()->bindTo(null));
+        return new self(array_reverse($this->toArray()), '', $this->getValidator());
     }
 
     public function reverseMap(callable $f, string $builtinValidatorName = '', callable $validator = null)
@@ -619,7 +619,7 @@ trait ScalaLikeCollectionMethods
         $array = $this->toArray();
         sort($array);
 
-        return new self($array, '', $this->getValidator()->bindTo(null));
+        return new self($array, '', $this->getValidator());
     }
 
     public function sortWith(callable $lt): self
@@ -627,7 +627,7 @@ trait ScalaLikeCollectionMethods
         $array = $this->toArray();
         usort($array, $lt);
 
-        return new self($array, '', $this->getValidator()->bindTo(null));
+        return new self($array, '', $this->getValidator());
     }
 
     public function patch(int $from, self $that, int $replaced)
@@ -654,7 +654,7 @@ trait ScalaLikeCollectionMethods
             }
         }
 
-        return new self($newArray, '', $this->getValidator()->bindTo(null));
+        return new self($newArray, '', $this->getValidator());
     }
 
     public function updated(int $n, $elem): self
@@ -662,7 +662,7 @@ trait ScalaLikeCollectionMethods
         $newArray = $this->toArray();
         $newArray[$n] = $elem;
 
-        return new self($newArray, '', $this->getValidator()->bindTo(null));
+        return new self($newArray, '', $this->getValidator());
     }
 
     //endregion
@@ -674,7 +674,7 @@ trait ScalaLikeCollectionMethods
         $array = $this->toArray();
         array_unshift($array, $elem);
 
-        return new self($array, '', $this->getValidator()->bindTo(null));
+        return new self($array, '', $this->getValidator());
     }
 
     //endregion

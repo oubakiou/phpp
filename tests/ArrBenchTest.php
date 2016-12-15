@@ -10,7 +10,7 @@ namespace oubakiou\phpp;
 
 class ArrBenchTest extends \PHPUnit_Framework_TestCase
 {
-    public function testBench($n = 1000)
+    public function testBench($n = 100)
     {
         echo "\n\nbench start\n\n";
         $range = range(0, 10000);
