@@ -2,6 +2,8 @@
 
 phpp is basic class library in PHP
 
+[![Build Status](https://travis-ci.org/oubakiou/phpp.svg?branch=master)](https://travis-ci.org/oubakiou/phpp)
+
 ## Arr
 
 ### basic usage
