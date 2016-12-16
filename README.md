@@ -3,6 +3,8 @@
 phpp is basic class library in PHP
 
 [![Build Status](https://travis-ci.org/oubakiou/phpp.svg?branch=master)](https://travis-ci.org/oubakiou/phpp)
+[![License](https://poser.pugx.org/oubakiou/phpp/license)](https://packagist.org/packages/oubakiou/phpp)
+[![Latest Stable Version](https://poser.pugx.org/oubakiou/phpp/v/stable)](https://packagist.org/packages/oubakiou/phpp)
 
 ## Arr
 
